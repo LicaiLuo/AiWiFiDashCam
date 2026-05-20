@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <application>
+        <activity
+            android:name=".FeedbackActivity"
+            android:exported="false" />
+
+        <activity-alias
+            android:name=".FeedbackStandaloneLauncher"
+            android:enabled="${dashcamStandaloneLauncherEnabled}"
+            android:exported="true"
+            android:label="Feedback"
+            android:targetActivity=".FeedbackActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+
+        <meta-data
+            android:name="cn.anc.dashcam.route.feedback"
+            android:value="cn.anc.dashcam.feedback.FeedbackActivity" />
+    </application>
+
+</manifest>

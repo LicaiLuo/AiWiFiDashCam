@@ -1,0 +1,15 @@
+{
+  "name": "user-preferences",
+  "description": "用户自定义个性化配置，包括文件编码规范、Gradle 使用限制等全局约束",
+  "version": "1.0.0",
+  "category": "core",
+  "priority": 999,
+  "always_active": true,
+  "tags": [
+    "encoding",
+    "gradle",
+    "preferences",
+    "constraints",
+    "utf-8"
+  ]
+}

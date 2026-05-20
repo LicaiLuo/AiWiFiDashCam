@@ -1,0 +1,5 @@
+<resources>
+    <string name="home_tab_device">Device</string>
+    <string name="home_tab_album">Local Album</string>
+    <string name="home_tab_mine">Mine</string>
+</resources>

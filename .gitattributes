@@ -1,0 +1,3 @@
+tools/ai-git/bin/ac text eol=lf
+tools/ai-git/hooks/* text eol=lf
+tools/ai-git/setup/*.sh text eol=lf

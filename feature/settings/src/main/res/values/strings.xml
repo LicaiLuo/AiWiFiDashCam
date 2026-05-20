@@ -1,0 +1,12 @@
+<resources>
+    <string name="settings_title">APP Settings</string>
+    <string name="settings_language">Language</string>
+    <string name="settings_language_title">Language</string>
+    <string name="settings_language_chinese">中文</string>
+    <string name="settings_language_english">English</string>
+    <string name="settings_theme_mode">Display Mode</string>
+    <string name="settings_theme_mode_title">Display Mode</string>
+    <string name="settings_theme_light">Light Mode</string>
+    <string name="settings_theme_dark">Dark Mode</string>
+    <string name="settings_back">Back</string>
+</resources>

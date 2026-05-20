@@ -1,0 +1,7 @@
+<resources>
+    <string name="mine_register_login">注册/登录</string>
+    <string name="mine_messages">我的消息</string>
+    <string name="mine_app_settings">APP 设置</string>
+    <string name="mine_help">帮助</string>
+    <string name="mine_more">更多</string>
+</resources>

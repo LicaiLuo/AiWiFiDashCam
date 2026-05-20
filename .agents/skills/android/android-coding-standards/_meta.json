@@ -1,0 +1,20 @@
+{
+  "name": "android-coding-standards",
+  "description": "Android 特定开发规范和项目特定指导",
+  "version": "1.0.0",
+  "category": "android",
+  "priority": 200,
+  "dependencies": [
+    "kotlin-coding-standards",
+    "java-coding-standards",
+    "user-preferences"
+  ],
+  "tags": [
+    "android",
+    "coding-standards",
+    "jetpack-compose",
+    "viewmodel",
+    "repository",
+    "lifecycle"
+  ]
+}

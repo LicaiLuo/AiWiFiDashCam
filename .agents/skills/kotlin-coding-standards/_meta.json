@@ -1,0 +1,17 @@
+{
+  "name": "kotlin-coding-standards",
+  "description": "Kotlin 代码规范和最佳实践",
+  "version": "1.0.0",
+  "category": "coding-standards",
+  "priority": 150,
+  "dependencies": [
+    "user-preferences"
+  ],
+  "tags": [
+    "kotlin",
+    "coding-standards",
+    "coroutines",
+    "flow",
+    "best-practices"
+  ]
+}

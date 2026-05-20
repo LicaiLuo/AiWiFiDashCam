@@ -1,0 +1,12 @@
+<resources>
+    <string name="settings_title">APP 设置</string>
+    <string name="settings_language">语言</string>
+    <string name="settings_language_title">语言设置</string>
+    <string name="settings_language_chinese">中文</string>
+    <string name="settings_language_english">English</string>
+    <string name="settings_theme_mode">显示模式</string>
+    <string name="settings_theme_mode_title">显示模式</string>
+    <string name="settings_theme_light">明亮模式</string>
+    <string name="settings_theme_dark">黑夜模式</string>
+    <string name="settings_back">返回</string>
+</resources>

@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Prido</string>
+    <string name="dashcam_start_route">home</string>
+</resources>

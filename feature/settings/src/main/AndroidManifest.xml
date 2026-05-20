@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <application>
+        <activity
+            android:name=".SettingsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LanguageSettingsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ThemeSettingsActivity"
+            android:exported="false" />
+
+        <activity-alias
+            android:name=".SettingsStandaloneLauncher"
+            android:enabled="${dashcamStandaloneLauncherEnabled}"
+            android:exported="true"
+            android:label="@string/settings_title"
+            android:targetActivity=".SettingsActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+
+        <meta-data
+            android:name="cn.anc.dashcam.route.settings"
+            android:value="cn.anc.dashcam.settings.SettingsActivity" />
+    </application>
+
+</manifest>
