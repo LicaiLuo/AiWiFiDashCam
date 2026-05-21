@@ -1,0 +1,2 @@
+cn.anc.dashcam.album
+string album_page_title

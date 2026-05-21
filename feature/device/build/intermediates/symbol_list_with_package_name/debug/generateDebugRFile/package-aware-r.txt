@@ -1,0 +1,10 @@
+cn.anc.dashcam.device
+string button_album_desc
+string button_album_title
+string button_device_desc
+string button_device_title
+string button_mine_desc
+string button_mine_title
+string button_share_desc
+string button_share_title
+string device_page_title

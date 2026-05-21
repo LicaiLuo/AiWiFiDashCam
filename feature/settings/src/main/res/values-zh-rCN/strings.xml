@@ -8,5 +8,17 @@
     <string name="settings_theme_mode_title">显示模式</string>
     <string name="settings_theme_light">明亮模式</string>
     <string name="settings_theme_dark">黑夜模式</string>
+    <string name="settings_theme_system">跟随系统</string>
+    <string name="settings_theme_color">主题颜色</string>
+    <string name="settings_theme_color_title">主题颜色</string>
+    <string name="settings_status_bar">状态栏字体颜色</string>
+    <string name="settings_status_bar_title">选择状态栏字体颜色</string>
+    <string name="settings_status_bar_auto">智能跟随模式（自动）</string>
+    <string name="settings_status_bar_dark">强制深色（黑色）字体</string>
+    <string name="settings_status_bar_light">强制浅色（白色）字体</string>
+    <string name="settings_color_blue">经典科技蓝</string>
+    <string name="settings_color_green">清新森林绿</string>
+    <string name="settings_color_orange">活力阳光橙</string>
+    <string name="settings_color_purple">优雅梦幻紫</string>
     <string name="settings_back">返回</string>
 </resources>

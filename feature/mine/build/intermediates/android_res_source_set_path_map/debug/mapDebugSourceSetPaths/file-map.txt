@@ -1,0 +1,8 @@
+cn.anc.dashcam.mine-pngs-0 D:\AiWorkspace\aonidashcamapp\AiWifiDashcam\feature\mine\build\generated\res\pngs\debug
+cn.anc.dashcam.mine-updated_navigation_xml-1 D:\AiWorkspace\aonidashcamapp\AiWifiDashcam\feature\mine\build\generated\updated_navigation_xml\debug
+cn.anc.dashcam.mine-mergeDebugResources-2 D:\AiWorkspace\aonidashcamapp\AiWifiDashcam\feature\mine\build\intermediates\incremental\debug\mergeDebugResources\merged.dir
+cn.anc.dashcam.mine-mergeDebugResources-3 D:\AiWorkspace\aonidashcamapp\AiWifiDashcam\feature\mine\build\intermediates\incremental\debug\mergeDebugResources\stripped.dir
+cn.anc.dashcam.mine-debug-4 D:\AiWorkspace\aonidashcamapp\AiWifiDashcam\feature\mine\build\intermediates\merged_res\debug\mergeDebugResources
+cn.anc.dashcam.mine-debug-5 D:\AiWorkspace\aonidashcamapp\AiWifiDashcam\feature\mine\build\intermediates\packaged_res\debug\packageDebugResources
+cn.anc.dashcam.mine-debug-6 D:\AiWorkspace\aonidashcamapp\AiWifiDashcam\feature\mine\src\debug\res
+cn.anc.dashcam.mine-main-7 D:\AiWorkspace\aonidashcamapp\AiWifiDashcam\feature\mine\src\main\res

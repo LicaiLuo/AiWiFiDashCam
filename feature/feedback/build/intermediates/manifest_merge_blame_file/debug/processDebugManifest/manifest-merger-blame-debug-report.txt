@@ -1,0 +1,50 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="cn.anc.dashcam.feedback" >
+4
+5    <uses-sdk android:minSdkVersion="24" />
+5-->INJECTED
+5-->INJECTED
+6
+7    <application>
+7-->D:\AiWorkspace\aonidashcamapp\AiWifiDashcam\feature\feedback\src\main\AndroidManifest.xml:4:5-25:19
+8        <activity
+8-->D:\AiWorkspace\aonidashcamapp\AiWifiDashcam\feature\feedback\src\main\AndroidManifest.xml:5:9-7:40
+9            android:name="cn.anc.dashcam.feedback.FeedbackActivity"
+9-->D:\AiWorkspace\aonidashcamapp\AiWifiDashcam\feature\feedback\src\main\AndroidManifest.xml:6:13-45
+10            android:exported="false" />
+10-->D:\AiWorkspace\aonidashcamapp\AiWifiDashcam\feature\feedback\src\main\AndroidManifest.xml:7:13-37
+11
+12        <activity-alias
+12-->INJECTED
+13            android:name="cn.anc.dashcam.feedback.FeedbackStandaloneLauncher"
+13-->D:\AiWorkspace\aonidashcamapp\AiWifiDashcam\feature\feedback\src\main\AndroidManifest.xml:10:13-55
+14            android:enabled="false"
+14-->INJECTED
+15            android:exported="true"
+15-->D:\AiWorkspace\aonidashcamapp\AiWifiDashcam\feature\feedback\src\main\AndroidManifest.xml:12:13-36
+16            android:label="Feedback"
+16-->D:\AiWorkspace\aonidashcamapp\AiWifiDashcam\feature\feedback\src\main\AndroidManifest.xml:13:13-37
+17            android:targetActivity="cn.anc.dashcam.feedback.FeedbackActivity" >
+17-->D:\AiWorkspace\aonidashcamapp\AiWifiDashcam\feature\feedback\src\main\AndroidManifest.xml:14:13-55
+18            <intent-filter>
+18-->D:\AiWorkspace\aonidashcamapp\AiWifiDashcam\feature\feedback\src\main\AndroidManifest.xml:15:13-19:29
+19                <action android:name="android.intent.action.MAIN" />
+19-->D:\AiWorkspace\aonidashcamapp\AiWifiDashcam\feature\feedback\src\main\AndroidManifest.xml:16:17-69
+19-->D:\AiWorkspace\aonidashcamapp\AiWifiDashcam\feature\feedback\src\main\AndroidManifest.xml:16:25-66
+20
+21                <category android:name="android.intent.category.LAUNCHER" />
+21-->D:\AiWorkspace\aonidashcamapp\AiWifiDashcam\feature\feedback\src\main\AndroidManifest.xml:18:17-77
+21-->D:\AiWorkspace\aonidashcamapp\AiWifiDashcam\feature\feedback\src\main\AndroidManifest.xml:18:27-74
+22            </intent-filter>
+23        </activity-alias>
+24
+25        <meta-data
+25-->D:\AiWorkspace\aonidashcamapp\AiWifiDashcam\feature\feedback\src\main\AndroidManifest.xml:22:9-24:72
+26            android:name="cn.anc.dashcam.route.feedback"
+26-->D:\AiWorkspace\aonidashcamapp\AiWifiDashcam\feature\feedback\src\main\AndroidManifest.xml:23:13-57
+27            android:value="cn.anc.dashcam.feedback.FeedbackActivity" />
+27-->D:\AiWorkspace\aonidashcamapp\AiWifiDashcam\feature\feedback\src\main\AndroidManifest.xml:24:13-69
+28    </application>
+29
+30</manifest>

@@ -1,0 +1,7 @@
+cn.anc.dashcam.uniden-pngs-0 D:\AiWorkspace\aonidashcamapp\AiWifiDashcam\uniden\build\generated\res\pngs\debug
+cn.anc.dashcam.uniden-updated_navigation_xml-1 D:\AiWorkspace\aonidashcamapp\AiWifiDashcam\uniden\build\generated\updated_navigation_xml\debug
+cn.anc.dashcam.uniden-packageDebugResources-2 D:\AiWorkspace\aonidashcamapp\AiWifiDashcam\uniden\build\intermediates\incremental\debug\packageDebugResources\merged.dir
+cn.anc.dashcam.uniden-packageDebugResources-3 D:\AiWorkspace\aonidashcamapp\AiWifiDashcam\uniden\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
+cn.anc.dashcam.uniden-debug-4 D:\AiWorkspace\aonidashcamapp\AiWifiDashcam\uniden\build\intermediates\merged_res\debug\mergeDebugResources
+cn.anc.dashcam.uniden-debug-5 D:\AiWorkspace\aonidashcamapp\AiWifiDashcam\uniden\src\debug\res
+cn.anc.dashcam.uniden-main-6 D:\AiWorkspace\aonidashcamapp\AiWifiDashcam\uniden\src\main\res

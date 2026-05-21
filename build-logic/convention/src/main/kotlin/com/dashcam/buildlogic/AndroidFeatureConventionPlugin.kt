@@ -56,7 +56,10 @@ class AndroidFeatureConventionPlugin : Plugin<Project> {
             target.plugins.apply(AndroidLibraryConventionPlugin::class.java)
             target.extensions.configure<LibraryExtension> {
                 defaultConfig {
-                    consumerProguardFiles("consumer-rules.pro")
+                    val proguardFile = target.file("consumer-rules.pro")
+                    if (proguardFile.exists()) {
+                        consumerProguardFiles("consumer-rules.pro")
+                    }
                     manifestPlaceholders["dashcamStandaloneLauncherEnabled"] = "false"
                 }
             }

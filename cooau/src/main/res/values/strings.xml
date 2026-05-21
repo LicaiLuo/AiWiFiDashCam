@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Cooau</string> <!-- 声明 cooau 马甲包客户端的启动在手机桌面的长名称 -->
+    <string name="dashcam_start_route">home</string> <!-- 声明起步首发路由终点为 home 一级工作区 -->
+</resources>

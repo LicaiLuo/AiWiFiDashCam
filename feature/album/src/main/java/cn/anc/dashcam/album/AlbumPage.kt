@@ -42,7 +42,7 @@ private object AlbumColors {
     @Composable
     fun current(): AlbumColorScheme {
         val context = LocalContext.current
-        return if (AppThemeManager.currentThemeMode(context) == AppThemeMode.DARK) {
+        return if (AppThemeManager.isDarkTheme(context)) {
             AlbumColorScheme(
                 pageBackground = Color(0xFF101418),
                 textPrimary = Color(0xFFE8EDF2),

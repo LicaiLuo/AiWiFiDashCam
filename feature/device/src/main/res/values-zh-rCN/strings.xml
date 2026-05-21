@@ -1,3 +1,11 @@
 <resources>
-    <string name="device_page_title">设备</string>
+    <string name="device_page_title">记录仪控制台</string>
+    <string name="button_device_title">设备 (Device)</string>
+    <string name="button_device_desc">配置车机物理连接、网络与录像机实时状态</string>
+    <string name="button_album_title">本地相册 (Local Album)</string>
+    <string name="button_album_desc">随时查阅和下载所录制的视频及行车照片</string>
+    <string name="button_share_title">分享 (Share)</string>
+    <string name="button_share_desc">无耦合快速唤起车辆记录仪共享与邀请面板</string>
+    <string name="button_mine_title">支持 (Mine)</string>
+    <string name="button_mine_desc">访问官方客服反馈、个人中心及偏好设置</string>
 </resources>

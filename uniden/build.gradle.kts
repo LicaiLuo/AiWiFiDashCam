@@ -13,6 +13,7 @@ android {
 
 dependencies {
     implementation(project(":core:common"))
+    implementation(project(":core:data"))
     implementation(project(":feature:feedback"))
     implementation(project(":feature:splash"))
     implementation(project(":feature:home"))

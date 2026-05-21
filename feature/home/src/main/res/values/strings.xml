@@ -2,4 +2,13 @@
     <string name="home_tab_device">Device</string>
     <string name="home_tab_album">Local Album</string>
     <string name="home_tab_mine">Mine</string>
+    <string name="home_tab_feedback">Feedback</string>
+    <string name="home_tab_add">Share/Add</string>
+    <string name="device_connect_status">CarDVR-2222</string>
+    <string name="device_connect_btn">Connect Dashcam</string>
+    <string name="uniden_share_add_device">Add / Share Device</string>
+    <string name="uniden_share_content">This is a decoupled, elegant full-screen Add / Share panel!</string>
+    <string name="cooau_drawer_profile">User Profile</string>
+    <string name="cooau_drawer_feedback">Feedback / Support</string>
+    <string name="cooau_drawer_settings">System Settings</string>
 </resources>

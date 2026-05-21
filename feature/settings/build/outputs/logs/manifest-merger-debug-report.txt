@@ -1,0 +1,77 @@
+-- Merging decision tree log ---
+activity-alias#cn.anc.dashcam.settings.SettingsStandaloneLauncher
+INJECTED from D:\AiWorkspace\aonidashcamapp\AiWifiDashcam\feature\settings\src\main\AndroidManifest.xml:21:9-32:26
+	android:enabled
+		INJECTED from D:\AiWorkspace\aonidashcamapp\AiWifiDashcam\feature\settings\src\main\AndroidManifest.xml
+		ADDED from D:\AiWorkspace\aonidashcamapp\AiWifiDashcam\feature\settings\src\main\AndroidManifest.xml:23:13-66
+	android:label
+		ADDED from D:\AiWorkspace\aonidashcamapp\AiWifiDashcam\feature\settings\src\main\AndroidManifest.xml:25:13-51
+	android:exported
+		ADDED from D:\AiWorkspace\aonidashcamapp\AiWifiDashcam\feature\settings\src\main\AndroidManifest.xml:24:13-36
+	android:targetActivity
+		ADDED from D:\AiWorkspace\aonidashcamapp\AiWifiDashcam\feature\settings\src\main\AndroidManifest.xml:26:13-55
+	android:name
+		ADDED from D:\AiWorkspace\aonidashcamapp\AiWifiDashcam\feature\settings\src\main\AndroidManifest.xml:22:13-55
+manifest
+ADDED from D:\AiWorkspace\aonidashcamapp\AiWifiDashcam\feature\settings\src\main\AndroidManifest.xml:2:1-39:12
+INJECTED from D:\AiWorkspace\aonidashcamapp\AiWifiDashcam\feature\settings\src\main\AndroidManifest.xml:2:1-39:12
+	package
+		INJECTED from D:\AiWorkspace\aonidashcamapp\AiWifiDashcam\feature\settings\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from D:\AiWorkspace\aonidashcamapp\AiWifiDashcam\feature\settings\src\main\AndroidManifest.xml:2:11-69
+application
+ADDED from D:\AiWorkspace\aonidashcamapp\AiWifiDashcam\feature\settings\src\main\AndroidManifest.xml:4:5-37:19
+activity#cn.anc.dashcam.settings.SettingsActivity
+ADDED from D:\AiWorkspace\aonidashcamapp\AiWifiDashcam\feature\settings\src\main\AndroidManifest.xml:5:9-7:40
+	android:exported
+		ADDED from D:\AiWorkspace\aonidashcamapp\AiWifiDashcam\feature\settings\src\main\AndroidManifest.xml:7:13-37
+	android:name
+		ADDED from D:\AiWorkspace\aonidashcamapp\AiWifiDashcam\feature\settings\src\main\AndroidManifest.xml:6:13-45
+activity#cn.anc.dashcam.settings.LanguageSettingsActivity
+ADDED from D:\AiWorkspace\aonidashcamapp\AiWifiDashcam\feature\settings\src\main\AndroidManifest.xml:8:9-10:40
+	android:exported
+		ADDED from D:\AiWorkspace\aonidashcamapp\AiWifiDashcam\feature\settings\src\main\AndroidManifest.xml:10:13-37
+	android:name
+		ADDED from D:\AiWorkspace\aonidashcamapp\AiWifiDashcam\feature\settings\src\main\AndroidManifest.xml:9:13-53
+activity#cn.anc.dashcam.settings.ThemeSettingsActivity
+ADDED from D:\AiWorkspace\aonidashcamapp\AiWifiDashcam\feature\settings\src\main\AndroidManifest.xml:11:9-13:40
+	android:exported
+		ADDED from D:\AiWorkspace\aonidashcamapp\AiWifiDashcam\feature\settings\src\main\AndroidManifest.xml:13:13-37
+	android:name
+		ADDED from D:\AiWorkspace\aonidashcamapp\AiWifiDashcam\feature\settings\src\main\AndroidManifest.xml:12:13-50
+activity#cn.anc.dashcam.settings.ThemeColorSettingsActivity
+ADDED from D:\AiWorkspace\aonidashcamapp\AiWifiDashcam\feature\settings\src\main\AndroidManifest.xml:14:9-16:40
+	android:exported
+		ADDED from D:\AiWorkspace\aonidashcamapp\AiWifiDashcam\feature\settings\src\main\AndroidManifest.xml:16:13-37
+	android:name
+		ADDED from D:\AiWorkspace\aonidashcamapp\AiWifiDashcam\feature\settings\src\main\AndroidManifest.xml:15:13-55
+activity#cn.anc.dashcam.settings.StatusBarSettingsActivity
+ADDED from D:\AiWorkspace\aonidashcamapp\AiWifiDashcam\feature\settings\src\main\AndroidManifest.xml:17:9-19:40
+	android:exported
+		ADDED from D:\AiWorkspace\aonidashcamapp\AiWifiDashcam\feature\settings\src\main\AndroidManifest.xml:19:13-37
+	android:name
+		ADDED from D:\AiWorkspace\aonidashcamapp\AiWifiDashcam\feature\settings\src\main\AndroidManifest.xml:18:13-54
+meta-data#cn.anc.dashcam.route.settings
+ADDED from D:\AiWorkspace\aonidashcamapp\AiWifiDashcam\feature\settings\src\main\AndroidManifest.xml:34:9-36:72
+	android:value
+		ADDED from D:\AiWorkspace\aonidashcamapp\AiWifiDashcam\feature\settings\src\main\AndroidManifest.xml:36:13-69
+	android:name
+		ADDED from D:\AiWorkspace\aonidashcamapp\AiWifiDashcam\feature\settings\src\main\AndroidManifest.xml:35:13-57
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from D:\AiWorkspace\aonidashcamapp\AiWifiDashcam\feature\settings\src\main\AndroidManifest.xml:27:13-31:29
+action#android.intent.action.MAIN
+ADDED from D:\AiWorkspace\aonidashcamapp\AiWifiDashcam\feature\settings\src\main\AndroidManifest.xml:28:17-69
+	android:name
+		ADDED from D:\AiWorkspace\aonidashcamapp\AiWifiDashcam\feature\settings\src\main\AndroidManifest.xml:28:25-66
+category#android.intent.category.LAUNCHER
+ADDED from D:\AiWorkspace\aonidashcamapp\AiWifiDashcam\feature\settings\src\main\AndroidManifest.xml:30:17-77
+	android:name
+		ADDED from D:\AiWorkspace\aonidashcamapp\AiWifiDashcam\feature\settings\src\main\AndroidManifest.xml:30:27-74
+uses-sdk
+INJECTED from D:\AiWorkspace\aonidashcamapp\AiWifiDashcam\feature\settings\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from D:\AiWorkspace\aonidashcamapp\AiWifiDashcam\feature\settings\src\main\AndroidManifest.xml
+INJECTED from D:\AiWorkspace\aonidashcamapp\AiWifiDashcam\feature\settings\src\main\AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from D:\AiWorkspace\aonidashcamapp\AiWifiDashcam\feature\settings\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from D:\AiWorkspace\aonidashcamapp\AiWifiDashcam\feature\settings\src\main\AndroidManifest.xml

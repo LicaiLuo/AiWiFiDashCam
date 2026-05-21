@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- COOAU 客户端矢量自适应主图标设计 - 绘制出一个微型的广角行车镜头造型 -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    
+    <!-- 1. 圆角高光黑底座背景 -->
+    <path
+        android:fillColor="#0F1115"
+        android:pathData="M16,16h76v76h-76z" />
+        
+    <!-- 2. 主体偏光滤镜镜头外环 -->
+    <path
+        android:fillColor="@color/brand_primary"
+        android:pathData="M54,18c-19.9,0 -36,16.1 -36,36s16.1,36 36,36s36,-16.1 36,-36s-16.1,-36 -36,-36z" />
+        
+    <!-- 3. 内芯光学镀层玻璃 -->
+    <path
+        android:fillColor="@color/brand_accent"
+        android:pathData="M54,30c-13.3,0 -24,10.7 -24,24s10.7,24 24,24s24,-10.7 24,-24s-10.7,-24 -24,-24z" />
+        
+    <!-- 4. 中心折反光斑点 -->
+    <path
+        android:fillColor="@color/white"
+        android:pathData="M54,42c-6.6,0 -12,5.4 -12,12s5.4,12 12,12s12,-5.4 12,-12s-5.4,-12 -12,-12z" />
+        
+</vector>

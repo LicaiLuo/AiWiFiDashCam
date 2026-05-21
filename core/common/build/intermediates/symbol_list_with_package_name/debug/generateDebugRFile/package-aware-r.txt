@@ -1,0 +1,5 @@
+cn.anc.dashcam.core.common
+anim slide_in_left
+anim slide_in_right
+anim slide_out_left
+anim slide_out_right

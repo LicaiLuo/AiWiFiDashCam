@@ -1,0 +1,24 @@
+R_DEF: Internal format may change without notice
+local
+string settings_back
+string settings_color_blue
+string settings_color_green
+string settings_color_orange
+string settings_color_purple
+string settings_language
+string settings_language_chinese
+string settings_language_english
+string settings_language_title
+string settings_status_bar
+string settings_status_bar_auto
+string settings_status_bar_dark
+string settings_status_bar_light
+string settings_status_bar_title
+string settings_theme_color
+string settings_theme_color_title
+string settings_theme_dark
+string settings_theme_light
+string settings_theme_mode
+string settings_theme_mode_title
+string settings_theme_system
+string settings_title

@@ -11,6 +11,12 @@
         <activity
             android:name=".ThemeSettingsActivity"
             android:exported="false" />
+        <activity
+            android:name=".ThemeColorSettingsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".StatusBarSettingsActivity"
+            android:exported="false" />
 
         <activity-alias
             android:name=".SettingsStandaloneLauncher"

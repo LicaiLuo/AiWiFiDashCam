@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 声明 COOAU 专用的极简统一全屏无顶栏主题 Style -->
+    <style name="Theme.Dashcam.Brand" parent="android:Theme.Material.Light.NoActionBar" />
+</resources>

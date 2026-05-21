@@ -30,6 +30,7 @@ dependencyResolutionManagement {
 rootProject.name = "AoniAiDashCam"
 include(":prido")
 include(":uniden")
+include(":cooau")
 include(":core:common")
 include(":core:data")
 include(":core:logging")

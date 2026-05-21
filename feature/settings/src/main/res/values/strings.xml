@@ -8,5 +8,17 @@
     <string name="settings_theme_mode_title">Display Mode</string>
     <string name="settings_theme_light">Light Mode</string>
     <string name="settings_theme_dark">Dark Mode</string>
+    <string name="settings_theme_system">Follow System</string>
+    <string name="settings_theme_color">Accent Color</string>
+    <string name="settings_theme_color_title">Accent Color</string>
+    <string name="settings_status_bar">Status Bar Text Color</string>
+    <string name="settings_status_bar_title">Status Bar Font Color</string>
+    <string name="settings_status_bar_auto">Follow Theme (Auto)</string>
+    <string name="settings_status_bar_dark">Force Dark Text</string>
+    <string name="settings_status_bar_light">Force Light Text</string>
+    <string name="settings_color_blue">Classic Blue</string>
+    <string name="settings_color_green">Fresh Green</string>
+    <string name="settings_color_orange">Warm Orange</string>
+    <string name="settings_color_purple">Elegant Purple</string>
     <string name="settings_back">Back</string>
 </resources>

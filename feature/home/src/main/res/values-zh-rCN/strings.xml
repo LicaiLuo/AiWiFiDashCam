@@ -1,5 +1,14 @@
 <resources>
-    <string name="home_tab_device">设备</string>
+    <string name="home_tab_device">记录仪</string>
     <string name="home_tab_album">本地相册</string>
     <string name="home_tab_mine">我的</string>
+    <string name="home_tab_feedback">问题反馈</string>
+    <string name="home_tab_add">共享/添加</string>
+    <string name="device_connect_status">CarDVR-2222</string>
+    <string name="device_connect_btn">连接记录仪</string>
+    <string name="uniden_share_add_device">添加设备与共享</string>
+    <string name="uniden_share_content">这是一个高内聚、零耦合的全新高颜值全屏分享与添加面板！</string>
+    <string name="cooau_drawer_profile">个人中心</string>
+    <string name="cooau_drawer_feedback">意见与反馈</string>
+    <string name="cooau_drawer_settings">应用设置管理</string>
 </resources>

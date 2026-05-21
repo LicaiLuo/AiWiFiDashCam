@@ -1,0 +1,13 @@
+{
+  "java.autobuild.enabled": false,
+  "java.import.gradle.enabled": false,
+  "java.import.maven.enabled": false,
+  "java.configuration.updateBuildConfiguration": "disabled",
+  "java.compile.nullAnalysis.mode": "disabled",
+  "gradle.autoDetect": "off",
+  "kotlin.languageServer.enabled": false,
+  "kotlin.indexing.enabled": false,
+  "kotlin.diagnostics.enabled": false,
+  "kotlin.scripts.enabled": false,
+  "kotlin.scripts.buildScriptsEnabled": false
+}

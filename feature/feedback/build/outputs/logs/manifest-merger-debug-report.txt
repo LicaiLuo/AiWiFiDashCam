@@ -1,0 +1,53 @@
+-- Merging decision tree log ---
+activity-alias#cn.anc.dashcam.feedback.FeedbackStandaloneLauncher
+INJECTED from D:\AiWorkspace\aonidashcamapp\AiWifiDashcam\feature\feedback\src\main\AndroidManifest.xml:9:9-20:26
+	android:enabled
+		INJECTED from D:\AiWorkspace\aonidashcamapp\AiWifiDashcam\feature\feedback\src\main\AndroidManifest.xml
+		ADDED from D:\AiWorkspace\aonidashcamapp\AiWifiDashcam\feature\feedback\src\main\AndroidManifest.xml:11:13-66
+	android:label
+		ADDED from D:\AiWorkspace\aonidashcamapp\AiWifiDashcam\feature\feedback\src\main\AndroidManifest.xml:13:13-37
+	android:exported
+		ADDED from D:\AiWorkspace\aonidashcamapp\AiWifiDashcam\feature\feedback\src\main\AndroidManifest.xml:12:13-36
+	android:targetActivity
+		ADDED from D:\AiWorkspace\aonidashcamapp\AiWifiDashcam\feature\feedback\src\main\AndroidManifest.xml:14:13-55
+	android:name
+		ADDED from D:\AiWorkspace\aonidashcamapp\AiWifiDashcam\feature\feedback\src\main\AndroidManifest.xml:10:13-55
+manifest
+ADDED from D:\AiWorkspace\aonidashcamapp\AiWifiDashcam\feature\feedback\src\main\AndroidManifest.xml:2:1-27:12
+INJECTED from D:\AiWorkspace\aonidashcamapp\AiWifiDashcam\feature\feedback\src\main\AndroidManifest.xml:2:1-27:12
+	package
+		INJECTED from D:\AiWorkspace\aonidashcamapp\AiWifiDashcam\feature\feedback\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from D:\AiWorkspace\aonidashcamapp\AiWifiDashcam\feature\feedback\src\main\AndroidManifest.xml:2:11-69
+application
+ADDED from D:\AiWorkspace\aonidashcamapp\AiWifiDashcam\feature\feedback\src\main\AndroidManifest.xml:4:5-25:19
+activity#cn.anc.dashcam.feedback.FeedbackActivity
+ADDED from D:\AiWorkspace\aonidashcamapp\AiWifiDashcam\feature\feedback\src\main\AndroidManifest.xml:5:9-7:40
+	android:exported
+		ADDED from D:\AiWorkspace\aonidashcamapp\AiWifiDashcam\feature\feedback\src\main\AndroidManifest.xml:7:13-37
+	android:name
+		ADDED from D:\AiWorkspace\aonidashcamapp\AiWifiDashcam\feature\feedback\src\main\AndroidManifest.xml:6:13-45
+meta-data#cn.anc.dashcam.route.feedback
+ADDED from D:\AiWorkspace\aonidashcamapp\AiWifiDashcam\feature\feedback\src\main\AndroidManifest.xml:22:9-24:72
+	android:value
+		ADDED from D:\AiWorkspace\aonidashcamapp\AiWifiDashcam\feature\feedback\src\main\AndroidManifest.xml:24:13-69
+	android:name
+		ADDED from D:\AiWorkspace\aonidashcamapp\AiWifiDashcam\feature\feedback\src\main\AndroidManifest.xml:23:13-57
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from D:\AiWorkspace\aonidashcamapp\AiWifiDashcam\feature\feedback\src\main\AndroidManifest.xml:15:13-19:29
+action#android.intent.action.MAIN
+ADDED from D:\AiWorkspace\aonidashcamapp\AiWifiDashcam\feature\feedback\src\main\AndroidManifest.xml:16:17-69
+	android:name
+		ADDED from D:\AiWorkspace\aonidashcamapp\AiWifiDashcam\feature\feedback\src\main\AndroidManifest.xml:16:25-66
+category#android.intent.category.LAUNCHER
+ADDED from D:\AiWorkspace\aonidashcamapp\AiWifiDashcam\feature\feedback\src\main\AndroidManifest.xml:18:17-77
+	android:name
+		ADDED from D:\AiWorkspace\aonidashcamapp\AiWifiDashcam\feature\feedback\src\main\AndroidManifest.xml:18:27-74
+uses-sdk
+INJECTED from D:\AiWorkspace\aonidashcamapp\AiWifiDashcam\feature\feedback\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from D:\AiWorkspace\aonidashcamapp\AiWifiDashcam\feature\feedback\src\main\AndroidManifest.xml
+INJECTED from D:\AiWorkspace\aonidashcamapp\AiWifiDashcam\feature\feedback\src\main\AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from D:\AiWorkspace\aonidashcamapp\AiWifiDashcam\feature\feedback\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from D:\AiWorkspace\aonidashcamapp\AiWifiDashcam\feature\feedback\src\main\AndroidManifest.xml

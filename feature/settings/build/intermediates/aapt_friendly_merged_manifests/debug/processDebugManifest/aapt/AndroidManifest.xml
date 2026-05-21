@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="cn.anc.dashcam.settings" >
+
+    <uses-sdk android:minSdkVersion="24" />
+
+    <application>
+        <activity
+            android:name="cn.anc.dashcam.settings.SettingsActivity"
+            android:exported="false" />
+
+        <activity-alias
+            android:name="cn.anc.dashcam.settings.SettingsStandaloneLauncher"
+            android:enabled="false"
+            android:exported="true"
+            android:label="@string/settings_title"
+            android:targetActivity="cn.anc.dashcam.settings.SettingsActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+
+        <activity
+            android:name="cn.anc.dashcam.settings.LanguageSettingsActivity"
+            android:exported="false" />
+        <activity
+            android:name="cn.anc.dashcam.settings.ThemeSettingsActivity"
+            android:exported="false" />
+        <activity
+            android:name="cn.anc.dashcam.settings.ThemeColorSettingsActivity"
+            android:exported="false" />
+        <activity
+            android:name="cn.anc.dashcam.settings.StatusBarSettingsActivity"
+            android:exported="false" />
+
+        <meta-data
+            android:name="cn.anc.dashcam.route.settings"
+            android:value="cn.anc.dashcam.settings.SettingsActivity" />
+    </application>
+
+</manifest>

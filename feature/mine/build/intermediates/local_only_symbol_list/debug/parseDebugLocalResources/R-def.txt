@@ -1,0 +1,11 @@
+R_DEF: Internal format may change without notice
+local
+drawable ic_account_help
+drawable ic_account_message
+drawable ic_account_more
+drawable ic_account_setup
+string mine_app_settings
+string mine_help
+string mine_messages
+string mine_more
+string mine_register_login

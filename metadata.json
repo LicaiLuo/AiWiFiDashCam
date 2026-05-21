@@ -1,0 +1,6 @@
+{
+  "name": "Uniden DashCam",
+  "description": "A UNIDEN AI-powered smart WiFi DashCam app supporting video viewing, local album management, and driving logging.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
