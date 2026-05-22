@@ -20,11 +20,16 @@ internal fun AppSettingsScreen(
     currentThemeMode: AppThemeMode,
     currentThemeColor: AppThemeColor,
     currentStatusBarTextMode: StatusBarTextMode,
+    currentStatusBarBgOption: cn.anc.dashcam.core.common.BarColorOption,
+    currentTitleBarBgOption: cn.anc.dashcam.core.common.BarColorOption,
     onBackClick: () -> Unit,
     onLanguageClick: () -> Unit,
     onThemeClick: () -> Unit,
     onThemeColorClick: () -> Unit,
     onStatusBarClick: () -> Unit,
+    onStatusBarBgClick: () -> Unit,
+    onTitleBarBgClick: () -> Unit,
+    onLiveStreamClick: () -> Unit,
 ) {
     SettingsSurface {
         AppSettingsPage(
@@ -32,11 +37,16 @@ internal fun AppSettingsScreen(
             currentThemeMode = currentThemeMode,
             currentThemeColor = currentThemeColor,
             currentStatusBarTextMode = currentStatusBarTextMode,
+            currentStatusBarBgOption = currentStatusBarBgOption,
+            currentTitleBarBgOption = currentTitleBarBgOption,
             onBackClick = onBackClick,
             onLanguageClick = onLanguageClick,
             onThemeClick = onThemeClick,
             onThemeColorClick = onThemeColorClick,
             onStatusBarClick = onStatusBarClick,
+            onStatusBarBgClick = onStatusBarBgClick,
+            onTitleBarBgClick = onTitleBarBgClick,
+            onLiveStreamClick = onLiveStreamClick,
         )
     }
 }
@@ -116,11 +126,16 @@ internal fun AppSettingsPage(
     currentThemeMode: AppThemeMode,
     currentThemeColor: AppThemeColor,
     currentStatusBarTextMode: StatusBarTextMode,
+    currentStatusBarBgOption: cn.anc.dashcam.core.common.BarColorOption,
+    currentTitleBarBgOption: cn.anc.dashcam.core.common.BarColorOption,
     onBackClick: () -> Unit,
     onLanguageClick: () -> Unit,
     onThemeClick: () -> Unit,
     onThemeColorClick: () -> Unit,
     onStatusBarClick: () -> Unit,
+    onStatusBarBgClick: () -> Unit,
+    onTitleBarBgClick: () -> Unit,
+    onLiveStreamClick: () -> Unit,
 ) {
     SettingsScaffold(
         title = stringResource(R.string.settings_title),
@@ -148,6 +163,24 @@ internal fun AppSettingsPage(
             title = stringResource(R.string.settings_status_bar),
             value = stringResource(currentStatusBarTextMode.labelRes),
             onClick = onStatusBarClick,
+        )
+        Spacer(modifier = Modifier.height(12.dp))
+        SettingValueRow(
+            title = stringResource(R.string.settings_status_bar_bg),
+            value = stringResource(currentStatusBarBgOption.labelRes),
+            onClick = onStatusBarBgClick,
+        )
+        Spacer(modifier = Modifier.height(12.dp))
+        SettingValueRow(
+            title = stringResource(R.string.settings_title_bar_bg),
+            value = stringResource(currentTitleBarBgOption.labelRes),
+            onClick = onTitleBarBgClick,
+        )
+        Spacer(modifier = Modifier.height(12.dp))
+        SettingValueRow(
+            title = stringResource(R.string.settings_live_stream_demo),
+            value = "16:9",
+            onClick = onLiveStreamClick,
         )
     }
 }
@@ -183,7 +216,7 @@ internal fun ThemeSettingsPage(
     onThemeModeSelected: (AppThemeMode) -> Unit,
 ) {
     SettingsScaffold(
-        title = stringResource(R.string.settings_theme_title),
+        title = stringResource(R.string.settings_theme_mode_title),
         onBackClick = onBackClick,
     ) {
         OptionRow(
@@ -272,6 +305,84 @@ internal fun StatusBarSettingsPage(
     }
 }
 
+@Composable
+internal fun StatusBarBgSettingsScreen(
+    selectedOption: cn.anc.dashcam.core.common.BarColorOption,
+    onBackClick: () -> Unit,
+    onOptionSelected: (cn.anc.dashcam.core.common.BarColorOption) -> Unit,
+) {
+    SettingsSurface {
+        StatusBarBgSettingsPage(
+            selectedOption = selectedOption,
+            onBackClick = onBackClick,
+            onOptionSelected = onOptionSelected,
+        )
+    }
+}
+
+@Composable
+internal fun StatusBarBgSettingsPage(
+    selectedOption: cn.anc.dashcam.core.common.BarColorOption,
+    onBackClick: () -> Unit,
+    onOptionSelected: (cn.anc.dashcam.core.common.BarColorOption) -> Unit,
+) {
+    SettingsScaffold(
+        title = stringResource(R.string.settings_status_bar_bg_title),
+        onBackClick = onBackClick,
+    ) {
+        val options = cn.anc.dashcam.core.common.BarColorOption.values()
+        options.forEachIndexed { index, option ->
+            OptionRow(
+                title = stringResource(option.labelRes),
+                selected = selectedOption == option,
+                onClick = { onOptionSelected(option) },
+            )
+            if (index < options.lastIndex) {
+                Spacer(modifier = Modifier.height(12.dp))
+            }
+        }
+    }
+}
+
+@Composable
+internal fun TitleBarBgSettingsScreen(
+    selectedOption: cn.anc.dashcam.core.common.BarColorOption,
+    onBackClick: () -> Unit,
+    onOptionSelected: (cn.anc.dashcam.core.common.BarColorOption) -> Unit,
+) {
+    SettingsSurface {
+        TitleBarBgSettingsPage(
+            selectedOption = selectedOption,
+            onBackClick = onBackClick,
+            onOptionSelected = onOptionSelected,
+        )
+    }
+}
+
+@Composable
+internal fun TitleBarBgSettingsPage(
+    selectedOption: cn.anc.dashcam.core.common.BarColorOption,
+    onBackClick: () -> Unit,
+    onOptionSelected: (cn.anc.dashcam.core.common.BarColorOption) -> Unit,
+) {
+    SettingsScaffold(
+        title = stringResource(R.string.settings_title_bar_bg_title),
+        onBackClick = onBackClick,
+    ) {
+        val options = cn.anc.dashcam.core.common.BarColorOption.values()
+        options.forEachIndexed { index, option ->
+            OptionRow(
+                title = stringResource(option.labelRes),
+                selected = selectedOption == option,
+                onClick = { onOptionSelected(option) },
+            )
+            if (index < options.lastIndex) {
+                Spacer(modifier = Modifier.height(12.dp))
+            }
+        }
+    }
+}
+
 @Preview(name = "Settings", showBackground = true)
 @Composable
 private fun AppSettingsPagePreview() {
@@ -280,11 +391,16 @@ private fun AppSettingsPagePreview() {
         currentThemeMode = AppThemeMode.SYSTEM,
         currentThemeColor = AppThemeColor.BLUE,
         currentStatusBarTextMode = StatusBarTextMode.AUTO,
+        currentStatusBarBgOption = cn.anc.dashcam.core.common.BarColorOption.DEFAULT,
+        currentTitleBarBgOption = cn.anc.dashcam.core.common.BarColorOption.DEFAULT,
         onBackClick = {},
         onLanguageClick = {},
         onThemeClick = {},
         onThemeColorClick = {},
         onStatusBarClick = {},
+        onStatusBarBgClick = {},
+        onTitleBarBgClick = {},
+        onLiveStreamClick = {},
     )
 }
 

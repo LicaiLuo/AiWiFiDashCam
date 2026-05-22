@@ -21,4 +21,25 @@
     <string name="settings_color_orange">Warm Orange</string>
     <string name="settings_color_purple">Elegant Purple</string>
     <string name="settings_back">Back</string>
+
+    <string name="settings_status_bar_bg">Status Bar Bg Color</string>
+    <string name="settings_status_bar_bg_title">Status Bar Background Color</string>
+    <string name="settings_title_bar_bg">Title Bar Bg Color</string>
+    <string name="settings_title_bar_bg_title">Title Bar Background Color</string>
+
+    <string name="settings_bar_color_default">Default (Follow Page/Theme)</string>
+    <string name="settings_bar_color_theme_accent">Active Theme Accent</string>
+    <string name="settings_bar_color_charcoal">Charcoal Gray</string>
+    <string name="settings_bar_color_white">Elegant White</string>
+    <string name="settings_bar_color_blue">Ocean Blue</string>
+    <string name="settings_bar_color_green">Forest Green</string>
+    <string name="settings_bar_color_orange">Warm Orange</string>
+    <string name="settings_bar_color_purple">Dreamy Purple</string>
+    <string name="settings_live_stream_demo">Live Stream Fullscreen Demo</string>
+    <string name="settings_live_stream_desc">Test full screen mode with a 16:9 gray preview layout.</string>
+    <string name="settings_live_stream_preview_title">Live Screen Mode Switch</string>
+    <string name="settings_live_stream_preview_btn">Toggle Full Screen Mode</string>
+    <string name="settings_live_stream_preview_exit_hint">Click anywhere or back button to exit fullscreen</string>
+    <string name="settings_live_stream_mode_normal">Non-Fullscreen Mode</string>
+    <string name="settings_live_stream_mode_full">Simulated Fullscreen Mode</string>
 </resources>

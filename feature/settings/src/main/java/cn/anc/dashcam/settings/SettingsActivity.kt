@@ -14,6 +14,8 @@ class SettingsActivity : BaseActivity() {
     private var activeThemeModeTag: String? = null
     private var activeThemeColorTag: String? = null
     private var activeStatusBarModeTag: String? = null
+    private var activeStatusBarBgTag: String? = null
+    private var activeTitleBarBgTag: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,11 +28,16 @@ class SettingsActivity : BaseActivity() {
                 currentThemeMode = AppThemeManager.currentThemeMode(this),
                 currentThemeColor = AppThemeManager.currentThemeColor(this),
                 currentStatusBarTextMode = AppThemeManager.currentStatusBarTextMode(this),
+                currentStatusBarBgOption = AppThemeManager.currentStatusBarBgColorOption(this),
+                currentTitleBarBgOption = AppThemeManager.currentTitleBarBgColorOption(this),
                 onBackClick = ::finish,
                 onLanguageClick = { startActivity(Intent(this, LanguageSettingsActivity::class.java)) },
                 onThemeClick = { startActivity(Intent(this, ThemeSettingsActivity::class.java)) },
                 onThemeColorClick = { startActivity(Intent(this, ThemeColorSettingsActivity::class.java)) },
                 onStatusBarClick = { startActivity(Intent(this, StatusBarSettingsActivity::class.java)) },
+                onStatusBarBgClick = { startActivity(Intent(this, StatusBarBgSettingsActivity::class.java)) },
+                onTitleBarBgClick = { startActivity(Intent(this, TitleBarBgSettingsActivity::class.java)) },
+                onLiveStreamClick = { startActivity(Intent(this, LiveStreamPreviewActivity::class.java)) },
             )
         }
     }
@@ -42,11 +49,15 @@ class SettingsActivity : BaseActivity() {
         val currentThemeModeTag = AppThemeManager.currentThemeModeTag(this)
         val currentThemeColorTag = AppThemeManager.currentThemeColorTag(this)
         val currentStatusBarModeTag = AppThemeManager.currentStatusBarTextMode(this).tag
+        val currentStatusBarBgTag = AppThemeManager.currentStatusBarBgColorOption(this).tag
+        val currentTitleBarBgTag = AppThemeManager.currentTitleBarBgColorOption(this).tag
 
         if (activeLanguageTag != currentLanguageTag ||
             activeThemeModeTag != currentThemeModeTag ||
             activeThemeColorTag != currentThemeColorTag ||
-            activeStatusBarModeTag != currentStatusBarModeTag
+            activeStatusBarModeTag != currentStatusBarModeTag ||
+            activeStatusBarBgTag != currentStatusBarBgTag ||
+            activeTitleBarBgTag != currentTitleBarBgTag
         ) {
             snapshotSettingsTags()
             recreate()
@@ -58,5 +69,7 @@ class SettingsActivity : BaseActivity() {
         activeThemeModeTag = AppThemeManager.currentThemeModeTag(this)
         activeThemeColorTag = AppThemeManager.currentThemeColorTag(this)
         activeStatusBarModeTag = AppThemeManager.currentStatusBarTextMode(this).tag
+        activeStatusBarBgTag = AppThemeManager.currentStatusBarBgColorOption(this).tag
+        activeTitleBarBgTag = AppThemeManager.currentTitleBarBgColorOption(this).tag
     }
 }

@@ -13,10 +13,10 @@ enum class AppThemeColor( // AppThemeColor 主颜色配方枚举类开始
     val lightHex: Long, // 浅色明亮白昼模式环境下，需要应用的主打高亮主色调 16 进制 Long 精度色码
     val darkHex: Long,  // 在深黑色护眼或黑夜环境下，需要应用的高比重对比主高亮 16 进制 Long 精度色码
 ) { // 枚举项
-    BLUE("blue", 0xFF26495C, 0xFF8DC6E8), // 科技蓝色 BLUE 及其亮色调和暗色调设置
-    GREEN("green", 0xFF2E7D32, 0xFF81C784), // 环保新能源绿色 GREEN 及其色度设置
-    ORANGE("orange", 0xFFD84315, 0xFFFF8A65), // 朝阳活力暖系橙色 ORANGE 及其属性
-    PURPLE("purple", 0xFF6A1B9A, 0xFFBA68C8); // 皇家科幻紫系 PURPLE 配色
+    BLUE("blue", 0xFF0D47A1, 0xFF90CAF9), // 科技蓝色 BLUE 及其亮色调和暗色调设置
+    GREEN("green", 0xFF1B5E20, 0xFFA5D6A7), // 环保新能源绿色 GREEN 及其色度设置
+    ORANGE("orange", 0xFFE65100, 0xFFFFCC80), // 朝阳活力暖系橙色 ORANGE 及其属性
+    PURPLE("purple", 0xFF4A148C, 0xFFE1BEE7); // 皇家科幻紫系 PURPLE 配色
 
     companion object { // 静态函数伴生区
         /**

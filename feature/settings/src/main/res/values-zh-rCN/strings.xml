@@ -21,4 +21,25 @@
     <string name="settings_color_orange">活力阳光橙</string>
     <string name="settings_color_purple">优雅梦幻紫</string>
     <string name="settings_back">返回</string>
+
+    <string name="settings_status_bar_bg">状态栏背景颜色</string>
+    <string name="settings_status_bar_bg_title">选择状态栏背景颜色</string>
+    <string name="settings_title_bar_bg">标题栏背景颜色</string>
+    <string name="settings_title_bar_bg_title">选择标题栏背景颜色</string>
+
+    <string name="settings_bar_color_default">系统默认（跟随页面/主题）</string>
+    <string name="settings_bar_color_theme_accent">应用当前主题强调色</string>
+    <string name="settings_bar_color_charcoal">经典炭黑</string>
+    <string name="settings_bar_color_white">简约雅致白</string>
+    <string name="settings_bar_color_blue">深邃科技蓝</string>
+    <string name="settings_bar_color_green">清新森林绿</string>
+    <string name="settings_bar_color_orange">活力阳光橙</string>
+    <string name="settings_bar_color_purple">高雅皇家紫</string>
+    <string name="settings_live_stream_demo">实时流全屏演示</string>
+    <string name="settings_live_stream_desc">测试全屏模式并在中间绘制16:9灰屏区域</string>
+    <string name="settings_live_stream_preview_title">实时流画面模式切换</string>
+    <string name="settings_live_stream_preview_btn">切换全屏模式</string>
+    <string name="settings_live_stream_preview_exit_hint">点击画面任意位置或返回键可退出全屏</string>
+    <string name="settings_live_stream_mode_normal">非全屏模式</string>
+    <string name="settings_live_stream_mode_full">全屏模式 (隐藏系统状态栏与导航栏)</string>
 </resources>

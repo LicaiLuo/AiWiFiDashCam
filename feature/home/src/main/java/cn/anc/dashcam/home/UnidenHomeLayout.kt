@@ -51,6 +51,7 @@ import cn.anc.dashcam.album.AlbumPage
 import cn.anc.dashcam.core.common.AppThemeManager
 import cn.anc.dashcam.core.logging.AppLog
 import cn.anc.dashcam.core.navigation.ActivityFeatureNavigator
+import cn.anc.dashcam.core.ui.DashCamTitleBar
 import cn.anc.dashcam.device.DevicePage
 
 /**
@@ -70,46 +71,13 @@ fun UnidenLayoutFrame() { // 方法开始
     ) { // 容器内部
         Column(modifier = Modifier.fillMaxSize()) { // 垂直大排架
             // A. UNIDEN 尊享豪华顶部动作栏 (AppBar Layout based on Screenshot)
-            Row( // 顶部条
-                modifier = Modifier // 修饰
-                    .fillMaxWidth() // 平铺
-                    .statusBarsPadding() // 自动贴合沉浸式电池电量状态栏高度
-                    .height(56.dp) // 精致的 56dp 一级导航高
-                    .padding(horizontal = 16.dp), // 留出 16dp 自适应
-                horizontalArrangement = Arrangement.SpaceBetween, // 左右完美排列
-                verticalAlignment = Alignment.CenterVertically // 垂直居中线平齐
-            ) { // 内容
-                // 1. 左侧：经典的返回箭头 (Left side back arrow)
-                Box( // 自包裹可点触圆形底座
-                    modifier = Modifier // 修饰
-                        .size(40.dp) // 40dp 黄金触角大小
-                        .clip(CircleShape) // 切圆
-                        .clickable { // 点击退出或隐藏 Activity
-                            AppLog.i("uniden navigation back clicked", tag = "Home") // 日志持久化
-                            (context as? Activity)?.onBackPressed() // 触发原生实体 Activity 物理退出，提高与硬件底座统一体验
-                        }, // 结束 clickable
-                    contentAlignment = Alignment.Center // 居中
-                ) { // 放置文字
-                    Text( // 简练优雅高对比返回符号
-                        text = "＜", // 仿真截图左方向键
-                        color = colors.selectedText, // 采用主题亮光蓝配色
-                        fontSize = 20.sp, // 特设 20sp
-                        fontWeight = FontWeight.Bold // 强调粗
-                    ) // 字符完
-                } // 盒完
-
-                // 2. 中间：记录仪多语言大标题 (Center adaptive title)
-                Text( // 标题组件
-                    text = stringResource(R.string.home_tab_device), // 绑定多语言：“记录仪” / “Device”
-                    color = if (AppThemeManager.isDarkTheme(context)) Color.White else Color(0xFF1F2937), // 支持日间高雅亮灰与暗夜钛白自感知
-                    fontSize = 18.sp, // 标准一档 18sp
-                    fontWeight = FontWeight.Bold // 强调大黑粗
-                ) // 标题完
-
-                // 3. 右侧：截图原版动作区：带有设置⚙️ 与 日志/文件📄 的双通道图标
-                Row( // 侧排横组
-                    verticalAlignment = Alignment.CenterVertically // 垂直中心线齐美
-                ) { // 双动作孔
+            DashCamTitleBar(
+                title = stringResource(R.string.home_tab_device),
+                onBackClick = null, // 主页的返回键不要显示
+                containerColor = colors.pageBackground,
+                contentColor = if (AppThemeManager.isDarkTheme(context)) Color.White else Color(0xFF1F2937),
+                enableStatusBarPadding = true,
+                rightContent = {
                     Box( // 📄 日志快捷按键底托
                         modifier = Modifier // 装饰
                             .size(40.dp) // 40dp 完美可点
@@ -147,8 +115,8 @@ fun UnidenLayoutFrame() { // 方法开始
                             modifier = Modifier.size(22.dp) // 22dp
                         ) // 图标完
                     } // 盒体完
-                } // 右端组完
-            } // 顶部导航 Row 结束
+                }
+            )
 
             // B. 主内容工作区自适应动态挂载 (Middle Body Switch Layout)
             Box( // 用 weight(1f) 自适应分配除顶栏和底栏外所有的剩余屏幕面积

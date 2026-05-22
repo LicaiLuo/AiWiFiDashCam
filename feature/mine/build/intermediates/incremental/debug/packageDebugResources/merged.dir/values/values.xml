@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="mine_app_settings">APP Settings</string>
-    <string name="mine_help">Help</string>
-    <string name="mine_messages">My Messages</string>
-    <string name="mine_more">More</string>
-    <string name="mine_register_login">Register/Login</string>
-</resources>

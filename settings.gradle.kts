@@ -28,9 +28,10 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "AoniAiDashCam"
-include(":prido")
-include(":uniden")
-include(":cooau")
+// include(":prido")
+// include(":uniden")
+// include(":cooau")
+include(":roaddrive")
 include(":core:common")
 include(":core:data")
 include(":core:logging")

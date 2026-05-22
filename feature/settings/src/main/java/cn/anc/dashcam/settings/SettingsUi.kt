@@ -23,6 +23,7 @@ import androidx.compose.ui.draw.clip // 导入图片或背景裁切修饰符
 import androidx.compose.ui.graphics.Color // 导入色彩类
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalInspectionMode // 导入本地上下文环境获取器
+import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.text.font.FontWeight // 导入字体粗细设置接口
 import androidx.compose.ui.unit.dp // 导入dp密度时间单位
 import androidx.compose.ui.unit.sp // 导入sp缩放无关像素单位
@@ -32,6 +33,8 @@ import cn.anc.dashcam.core.common.AppThemeMode // 导入定义的外观暗亮模
 import cn.anc.dashcam.core.common.AppThemeColor // 导入定义的主色强调配色枚举类
 import cn.anc.dashcam.core.common.StatusBarTextMode // 导入状态栏前景字模式枚举类
 import cn.anc.dashcam.core.data.BrandConfigManager // 导入品牌定制数据管理器
+import cn.anc.dashcam.core.ui.DashCamTitleBar
+
 
 @Composable // 声明此函数是一个可组合渲染UI函数
 internal fun SettingsScaffold( // 内部通用骨架组件开始
@@ -44,35 +47,23 @@ internal fun SettingsScaffold( // 内部通用骨架组件开始
     Column( // 根布局采用垂直链，装载顶栏和子页面内容
         modifier = Modifier // 准备全局样式修饰符连锁
             .fillMaxSize() // 填充物理屏幕的最大长和宽
-            .background(colors.pageBackground) // 应用自适应的明亮/幽暗物理底色
-            .statusBarsPadding() // 自动扩充顶部内边距，安全地避过系统状态栏图标遮挡
-            .padding(horizontal = 24.dp), // 左右两侧提供 24dp 优雅舒朗的呼吸空缺
+            .background(colors.pageBackground), // 应用自适应的明亮/幽暗物理底色
     ) { // 排版组织器大闭包
-        Row( // 顶置的统一返回导航横条
-            modifier = Modifier // 构建导航样式的修饰链
-                .fillMaxWidth() // 铺平并占据所有的主轴横向宽度
-                .height(72.dp), // 高度精确锁死在 Material 标准的 72.dp
-            verticalAlignment = Alignment.CenterVertically, // 子项在垂直方向保持严丝合缝的中线对齐
-        ) { // 顶栏内部视图构建
-            Text( // 渲染象征返回的左向单箭大字符
-                text = "<", // 箭型指示字
-                color = colors.textPrimary, // 对接亮暗字色
-                fontSize = 34.sp, // 将箭型尺寸放大到 34sp
-                fontWeight = FontWeight.Light, // 细体字宽，保障经典轻质的视觉阻尼感
-                modifier = Modifier // 构建点击点击高亮行为修饰器
-                    .size(width = 48.dp, height = 48.dp) // 限定热区范围
-                    .clickable(onClick = onBackClick), // 把点击返回上一级的逻辑注入动作闭包
-            ) // 返回返回字控件结束
-            Text( // 导航栏正中的文字大标题显示
-                text = title, // 外部传入的标题
-                color = colors.textPrimary, // 与主功能字色保持绝对像素一致
-                fontSize = 22.sp, // 22sp 大号导航重点关注字体
-                fontWeight = FontWeight.Medium, // 使用中粗体加粗重绘标志
-            ) // 标题控件结束
-        } // 顶导航 Row 结束
+        DashCamTitleBar(
+            title = title,
+            onBackClick = onBackClick,
+            containerColor = colors.pageBackground,
+            contentColor = colors.textPrimary,
+            enableStatusBarPadding = true
+        )
 
         Spacer(modifier = Modifier.height(24.dp)) // 设置导航栏与下方数据列表之间的 24dp 视觉间隙
-        Column(content = content) // 就地渲染外部填充引入的列块
+        Column(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(horizontal = 24.dp),
+            content = content
+        ) // 就地渲染外部填充引入的列块
     } // 根排版容器 Column 结束
 } // 导航页骨架架设方法退出
 
@@ -178,6 +169,19 @@ internal val StatusBarTextMode.labelRes: Int // 为新增的状态栏文字/图�
         StatusBarTextMode.LIGHT -> R.string.settings_status_bar_light // LIGHT 为状态栏盖印一层雪白色
     } // 状态栏映射属性结束
 
+@get:StringRes
+internal val cn.anc.dashcam.core.common.BarColorOption.labelRes: Int
+    get() = when (this) {
+        cn.anc.dashcam.core.common.BarColorOption.DEFAULT -> R.string.settings_bar_color_default
+        cn.anc.dashcam.core.common.BarColorOption.THEME_ACCENT -> R.string.settings_bar_color_theme_accent
+        cn.anc.dashcam.core.common.BarColorOption.CHARCOAL -> R.string.settings_bar_color_charcoal
+        cn.anc.dashcam.core.common.BarColorOption.WHITE -> R.string.settings_bar_color_white
+        cn.anc.dashcam.core.common.BarColorOption.BLUE -> R.string.settings_bar_color_blue
+        cn.anc.dashcam.core.common.BarColorOption.GREEN -> R.string.settings_bar_color_green
+        cn.anc.dashcam.core.common.BarColorOption.ORANGE -> R.string.settings_bar_color_orange
+        cn.anc.dashcam.core.common.BarColorOption.PURPLE -> R.string.settings_bar_color_purple
+    }
+
 internal data class SettingsColors( // 建立该设置页面在亮色及暗夜环境下对应的配色配置数据模型类
     val pageBackground: Color, // 物理主屏幕画布底色
     val cardBackground: Color, // 承载单行设置要素的卡片防尘白/极客灰底色
@@ -191,10 +195,10 @@ internal object AppSettingsColors { // 全局的在 Compose 沙盒下根据明�
     fun current(): SettingsColors { // 工厂返回函数
         if (LocalInspectionMode.current) {
             return SettingsColors(
-                pageBackground = Color(0xFFF6F8FA),
-                cardBackground = Color.White,
-                textPrimary = Color(0xFF292929),
-                textSecondary = Color(0xFF777777),
+                pageBackground = colorResource(id = cn.anc.dashcam.core.common.R.color.settings_preview_page_bg),
+                cardBackground = colorResource(id = cn.anc.dashcam.core.common.R.color.settings_pure_white),
+                textPrimary = colorResource(id = cn.anc.dashcam.core.common.R.color.settings_text_primary),
+                textSecondary = colorResource(id = cn.anc.dashcam.core.common.R.color.settings_text_secondary),
             )
         }
 
@@ -204,15 +208,15 @@ internal object AppSettingsColors { // 全局的在 Compose 沙盒下根据明�
             SettingsColors( // 返回一整套为深夜模式重绘的、护眼、抗疲劳、极客风采的高对比暗色系
                 pageBackground = Color(brandColor.pageBgDark), // 极富质感的黑灰夜空背景由 BrandConfigManager 接管
                 cardBackground = Color(brandColor.cardBgDark), // 繁星微光卡片深灰黑色的背景板由 BrandConfigManager 接管
-                textPrimary = Color(0xFFE8EDF2), // 极明亮干净的钛白色：0xFFE8EDF2，确保黑底白字高可读
-                textSecondary = Color(0xFF9BA7B3), // 优雅的雾霾灰蓝：0xFF9BA7B3
+                textPrimary = colorResource(id = cn.anc.dashcam.core.common.R.color.settings_text_primary),
+                textSecondary = colorResource(id = cn.anc.dashcam.core.common.R.color.settings_text_secondary),
             ) // 模式构建结束
         } else { // 如果没有处于黑夜状态，代表用户正身处一汪清泉般明快的朝阳白昼下
             SettingsColors( // 返回一整套整洁、明朗、高洁、反光护眼的基础日间亮色配比
                 pageBackground = Color(brandColor.pageBgLight), // 经典的防尘浅亮灰色背垫由 BrandConfigManager 接管
                 cardBackground = Color(brandColor.cardBgLight), // 珍珠白大底的卡片背景由 BrandConfigManager 接管
-                textPrimary = Color(0xFF292929), // 优雅的黑松墨石色：0xFF292929，防瞎、极具纸张光晕气息
-                textSecondary = Color(0xFF777777), // 轻质的晨雾淡灰：0xFF777777
+                textPrimary = colorResource(id = cn.anc.dashcam.core.common.R.color.settings_text_primary),
+                textSecondary = colorResource(id = cn.anc.dashcam.core.common.R.color.settings_text_secondary),
             ) // 日间包构建
         } // 亮暗对比结束
     } // current 方法结束

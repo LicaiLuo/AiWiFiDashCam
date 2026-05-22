@@ -11,6 +11,7 @@ fun HomeScreen() {
         BrandType.UNIDEN -> UnidenLayoutFrame()
         BrandType.COOAU -> CooauLayoutFrame()
         BrandType.PRIDO -> PridoLayoutFrame()
+        BrandType.ROADDRIVE -> PridoLayoutFrame() // RoadDrive uses the classic 4-Tab standard frame
     }
 }
 

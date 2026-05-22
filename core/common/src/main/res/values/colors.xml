@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 底部系统导航栏/手势条安全色 (Dynamic bottom system navigation bar / gesture bar colors) -->
+    <color name="nav_bar_bg_light">#FFFFFF</color>
+    <color name="nav_bar_bg_dark">#121212</color>
+    <color name="nav_bar_bg">@color/nav_bar_bg_light</color>
+
+    <!-- 设置与通用页面文字配色 (Settings Pages text color specifications) -->
+    <color name="settings_text_primary_light">#292929</color>
+    <color name="settings_text_primary_dark">#E8EDF2</color>
+    <color name="settings_text_primary">@color/settings_text_primary_light</color>
+
+    <color name="settings_text_secondary_light">#777777</color>
+    <color name="settings_text_secondary_dark">#9BA7B3</color>
+    <color name="settings_text_secondary">@color/settings_text_secondary_light</color>
+
+    <!-- 实时流画面占位区配色 (Live Stream video simulation layout colors) -->
+    <color name="live_stream_shading_full">#4B5563</color>
+    <color name="live_stream_shading_normal">#9CA3AF</color>
+    <color name="live_stream_shading">@color/live_stream_shading_normal</color>
+
+    <!-- Settings Static Theme Colors -->
+    <color name="settings_preview_page_bg">#F6F8FA</color>
+    <color name="settings_pure_black">#000000</color>
+    <color name="settings_pure_white">#FFFFFF</color>
+    <color name="settings_overlay_bg">#9D000000</color>
+    <color name="settings_white_alpha_80">#CCFFFFFF</color>
+    <color name="settings_white_alpha_60">#99FFFFFF</color>
+</resources>

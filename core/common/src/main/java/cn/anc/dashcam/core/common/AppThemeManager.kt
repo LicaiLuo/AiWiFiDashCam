@@ -87,6 +87,36 @@ object AppThemeManager { // 定义全局唯一的 AppThemeManager 单例对象
     } // 结束持久化
 
     /**
+     * 获取状态栏背景色配置 (Get status bar background color option)
+     */
+    fun currentStatusBarBgColorOption(context: Context): BarColorOption {
+        val tag = kv(context).decodeString(KEY_STATUS_BAR_BG_COLOR_TAG)
+        return BarColorOption.fromTag(tag)
+    }
+
+    /**
+     * 保存状态栏背景色配置 (Save status bar background color option)
+     */
+    fun saveStatusBarBgColorOption(context: Context, option: BarColorOption) {
+        kv(context).encode(KEY_STATUS_BAR_BG_COLOR_TAG, option.tag)
+    }
+
+    /**
+     * 获取标题栏背景色配置 (Get title bar background color option)
+     */
+    fun currentTitleBarBgColorOption(context: Context): BarColorOption {
+        val tag = kv(context).decodeString(KEY_TITLE_BAR_BG_COLOR_TAG)
+        return BarColorOption.fromTag(tag)
+    }
+
+    /**
+     * 保存标题栏背景色配置 (Save title bar background color option)
+     */
+    fun saveTitleBarBgColorOption(context: Context, option: BarColorOption) {
+        kv(context).encode(KEY_TITLE_BAR_BG_COLOR_TAG, option.tag)
+    }
+
+    /**
      * 获取 MMKV 存储实例 (Initialize and retrieve MMKV instance safely)
      */
     private fun kv(context: Context): MMKV { // 内部安全的腾讯 MMKV 获取接口封装
@@ -100,5 +130,7 @@ object AppThemeManager { // 定义全局唯一的 AppThemeManager 单例对象
     private const val KEY_THEME_MODE_TAG = "theme_mode_tag" // 存储显示模式 (日间/夜间/跟随系统) 对应的底层 key
     private const val KEY_THEME_COLOR_TAG = "theme_color_tag" // 存储全新设计品牌底色/高亮配色方案对应的底层 key
     private const val KEY_STATUS_BAR_TEXT_MODE_TAG = "status_bar_text_mode_tag" // 存储状态栏个性化前景色对应的 key
+    private const val KEY_STATUS_BAR_BG_COLOR_TAG = "status_bar_bg_color_tag" // 状态栏背景色
+    private const val KEY_TITLE_BAR_BG_COLOR_TAG = "title_bar_bg_color_tag" // 标题栏背景色
 } // 单例 object 结束
 

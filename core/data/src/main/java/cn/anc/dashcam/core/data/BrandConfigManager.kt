@@ -69,6 +69,26 @@ object BrandConfigManager {
         logoAssetPath = "logos/cooau.png"
     )
 
+    // 4. 默认内置的 RoadDrive 寰宇旗舰高亮配色与特色 OSD 设置 (User specifications)
+    private val DEFAULT_ROADDRIVE_COLORS = BrandColorConfig(
+        primaryColorLight = 0xFF8800FF, // 尊贵幻耀紫色：#8800FF
+        primaryColorDark = 0xFFAA44FF,  // 极客绚丽浅紫：#AA44FF
+        accentColorLight = 0xFFD4601A,
+        accentColorDark = 0xFFFCD080,
+        pageBgLight = 0xFFF6F8FA,
+        pageBgDark = 0xFF0B0E14,
+        cardBgLight = 0xFFFFFFFF,
+        cardBgDark = 0xFF141820
+    )
+    private val DEFAULT_ROADDRIVE_OSD = BrandOsdConfig(
+        showBrandWatermark = true,
+        watermarkText = "ROAD_DRIVE UHD DUAL SENSOR",
+        showSpeed = true,
+        showGps = true,
+        showTimestamp = true,
+        logoAssetPath = "logos/roaddrive.png"
+    )
+
     // 当前策略性持有的高亮配置（主线程高可见、即时并发防抖安全）
     @Volatile
     var colorConfig: BrandColorConfig = DEFAULT_PRIDO_COLORS
@@ -94,6 +114,10 @@ object BrandConfigManager {
             BrandType.COOAU -> {
                 colorConfig = DEFAULT_COOAU_COLORS
                 osdConfig = DEFAULT_COOAU_OSD
+            }
+            BrandType.ROADDRIVE -> {
+                colorConfig = DEFAULT_ROADDRIVE_COLORS
+                osdConfig = DEFAULT_ROADDRIVE_OSD
             }
         }
     }

@@ -3,6 +3,9 @@ package cn.anc.dashcam.prido
 import cn.anc.dashcam.core.common.AppConfig
 import cn.anc.dashcam.core.common.BrandType
 import cn.anc.dashcam.core.common.DashcamApplication
+import cn.anc.dashcam.core.data.BrandConfigManager
+import cn.anc.dashcam.core.data.BrandColorConfig
+import cn.anc.dashcam.core.data.BrandOsdConfig
 
 class PridoApp : DashcamApplication() { // PridoApp 实例化类
 

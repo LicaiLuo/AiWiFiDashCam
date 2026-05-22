@@ -1,5 +1,6 @@
 package cn.anc.dashcam.feedback
 
+import android.app.Activity
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -22,6 +23,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import cn.anc.dashcam.core.ui.DashCamTitleBar
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -69,41 +71,49 @@ internal fun FeedbackContent(
     onCreateFeedbackClick: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
+    val context = LocalContext.current
     Surface(
         modifier = modifier.fillMaxSize(),
         color = MaterialTheme.colorScheme.background,
     ) {
         Column(
-            modifier = Modifier
-                .fillMaxSize()
-                .padding(24.dp),
-            verticalArrangement = Arrangement.Center,
+            modifier = Modifier.fillMaxSize()
         ) {
-            Text(
-                text = "问题反馈",
-                style = MaterialTheme.typography.headlineSmall,
+            DashCamTitleBar(
+                title = "问题反馈",
+                onBackClick = {
+                    (context as? Activity)?.finish()
+                },
+                enableStatusBarPadding = true
             )
-            Spacer(modifier = Modifier.height(16.dp))
-            OutlinedTextField(
-                value = description,
-                onValueChange = onDescriptionChange,
-                modifier = Modifier.fillMaxWidth(),
-                minLines = 4,
-                label = { Text("问题描述") },
-            )
-            Spacer(modifier = Modifier.height(16.dp))
-            Button(
-                enabled = !isCreating,
-                onClick = onCreateFeedbackClick,
+
+            Column(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .padding(24.dp),
+                verticalArrangement = Arrangement.Center,
             ) {
-                Text(if (isCreating) "生成中" else "生成反馈包")
-            }
-            if (resultText.isNotBlank()) {
-                Spacer(modifier = Modifier.height(16.dp))
-                Text(
-                    text = resultText,
-                    style = MaterialTheme.typography.bodyMedium,
+                OutlinedTextField(
+                    value = description,
+                    onValueChange = onDescriptionChange,
+                    modifier = Modifier.fillMaxWidth(),
+                    minLines = 4,
+                    label = { Text("问题描述") },
                 )
+                Spacer(modifier = Modifier.height(16.dp))
+                Button(
+                    enabled = !isCreating,
+                    onClick = onCreateFeedbackClick,
+                ) {
+                    Text(if (isCreating) "生成中" else "生成反馈包")
+                }
+                if (resultText.isNotBlank()) {
+                    Spacer(modifier = Modifier.height(16.dp))
+                    Text(
+                        text = resultText,
+                        style = MaterialTheme.typography.bodyMedium,
+                    )
+                }
             }
         }
     }

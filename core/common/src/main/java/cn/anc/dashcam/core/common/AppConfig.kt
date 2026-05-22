@@ -9,7 +9,8 @@ package cn.anc.dashcam.core.common // 归属于 core:common 模块的通用包�
 enum class BrandType {
     PRIDO,   // 经典 4-Tab 品牌分支
     UNIDEN,  // 极简 3-Tab (设备、大+号分享、相册) 品牌分支
-    COOAU    // 左上角设置侧滑抽屉品牌分支
+    COOAU,   // 左上角设置侧滑抽屉品牌分支
+    ROADDRIVE // 极地顶级 4-Tab 旗舰品牌分支 (RoadDrive 4 navigation keys)
 }
 
 /**

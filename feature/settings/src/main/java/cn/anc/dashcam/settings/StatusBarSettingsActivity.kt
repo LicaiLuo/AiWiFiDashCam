@@ -4,9 +4,14 @@ import android.os.Bundle
 import androidx.activity.compose.setContent
 import cn.anc.dashcam.core.common.AppThemeManager
 import cn.anc.dashcam.core.common.BaseActivity
+import cn.anc.dashcam.core.common.StatusBarTextMode
 import cn.anc.dashcam.core.logging.AppLog
 
 class StatusBarSettingsActivity : BaseActivity() {
+
+    override fun getStatusBarTextMode(): StatusBarTextMode {
+        return AppThemeManager.currentStatusBarTextMode(this)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

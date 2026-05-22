@@ -4,6 +4,7 @@ import android.content.Context // 导入系统的 Context 句柄类
 import android.content.Intent // 导入系统的 Intent 意图跳转类
 import android.os.Bundle // 导入系统的 Bundle 跨进程信息载体类
 import androidx.activity.ComponentActivity // 导入 ComponentActivity 作为所有页面的承载基础
+import androidx.core.content.ContextCompat
 import androidx.core.view.WindowCompat // 导入 WindowCompat 窗口界面样式设置兼容处理辅助类
 
 /**
@@ -93,10 +94,17 @@ open class BaseActivity : ComponentActivity() { // 业务中所有 Activity 页�
     } // 动画过渡方法退出
 
     /**
+     * 获取当前 Activity 采用的状态栏字体/图标显示模式。
+     * 默认情况下，普通页面始终采用智能跟随模式 (AUTO)，以防全局设置干扰普通页面的视觉易读性（此处仅作测试用途）。
+     * 需要测试或应用个性化前景色设置的页面（如状态栏字体测试设置页）可重写此方法。
+     */
+    open fun getStatusBarTextMode(): StatusBarTextMode = StatusBarTextMode.AUTO
+
+    /**
      * 应用并刷新状态栏的前景字体与图标颜色 (Light/Dark style on StatusBar icons)
      * 
      * 遵循 3 种用户选择模式:
-     * - AUTO: (默认) 智能跟随当前 App 的显示主题。如果是黑夜模式，使用亮色(白色)字体；否则使用暗色(黑色)字体。
+     * - AUTO: (默认) 智能跟随当前 status bar background color 的深浅。如果是深色，使用亮色(白色)字体；否则使用暗色(黑色)字体。
      * - DARK: 强制状态栏采用黑色字体与图标。无论背景如何均恒定清晰。
      * - LIGHT: 强制状态栏采用白色字体与图标。适用于特定沉浸式顶部 Banner 或品牌底图。
      */
@@ -106,22 +114,60 @@ open class BaseActivity : ComponentActivity() { // 业务中所有 Activity 页�
         val insetsController = WindowCompat.getInsetsController(currentWindow, decorView) // 通过兼容类获取 insets 系统状态控制器，方便设置前景色
 
         // 1. 获取当前的状态栏颜色模式 (Read style)
-        val mode = AppThemeManager.currentStatusBarTextMode(this) // 读取 SharedPreferences/MMKV 中用户在设置里配置的当前状态栏模式
+        val mode = getStatusBarTextMode()
         
         // 2. 查看当前是否处于夜间模式下 (Read if dark theme is active)
         val isDarkTheme = AppThemeManager.isDarkTheme(this) // 读取主题渲染器，计算当如果是 SYSTEM 探测下的实际明暗渲染底色
+
+        val themeColor = AppThemeManager.currentThemeColor(this)
+        val statusBarOption = AppThemeManager.currentStatusBarBgColorOption(this)
+        val titleBarOption = AppThemeManager.currentTitleBarBgColorOption(this)
+
+        // 计算当前 status bar 的实际背景 ARGB 颜色
+        val resolvedBgHex: Long = if (isDarkTheme) {
+            0xFF121212L // 黑色模式变成黑色
+        } else {
+            val titleBarBgHex = when (titleBarOption) {
+                BarColorOption.DEFAULT -> themeColor.lightHex
+                BarColorOption.THEME_ACCENT -> themeColor.lightHex
+                else -> titleBarOption.lightHex
+            }
+            if (statusBarOption == BarColorOption.DEFAULT) {
+                titleBarBgHex
+            } else {
+                when (statusBarOption) {
+                    BarColorOption.THEME_ACCENT -> themeColor.lightHex
+                    else -> statusBarOption.lightHex
+                }
+            }
+        }
+
+        val isBgDark = isHexColorDark(resolvedBgHex)
 
         // 3. 计算是否应当显示白色图标 (Calculate if we should use light icons)
         val shouldShowLightIcons = when (mode) { // 通过 when 选择框架匹配出最贴合配置的状态
             StatusBarTextMode.LIGHT -> true // LIGHT 代表强制显示亮色(白字体)
             StatusBarTextMode.DARK -> false  // DARK 代表强制显示暗色(黑字体)
-            StatusBarTextMode.AUTO -> isDarkTheme // AUTO 会智能比对：如果处于护眼夜间深色底，则采用亮色(白字体)图标；否则相反
+            StatusBarTextMode.AUTO -> isBgDark // AUTO 会智能比对：如果处于护眼夜间深色底，则采用亮色(白字体)图标；否则相反
         } // 决策得出最终明暗布尔值
 
         // 4. 将设置反馈给系统视窗句柄 (Apply to set status bar light text or dark text)
         // isAppearanceLightStatusBars = true 代表“深色字体图标”（用于浅色背景）
         // isAppearanceLightStatusBars = false 代表“浅色（白色）字体图标”（用于深色背景）
         insetsController.isAppearanceLightStatusBars = !shouldShowLightIcons // 倒置赋值：若显示白字，则 LightStatusBar 应设为 false
+
+        // 5. 刷新底部系统虚拟导航栏/手势条的安全适配 (Sync bottom system navigation bar dynamic layout)
+        val navBarBgColor = ContextCompat.getColor(this, R.color.nav_bar_bg)
+        currentWindow.navigationBarColor = navBarBgColor
+        insetsController.isAppearanceLightNavigationBars = !isDarkTheme // 白昼模式（白色底）令虚拟按键变黑，黑夜模式（黑色底）令虚拟按键变白，始终保持极致高对比易读性
     } // 结束刷新状态栏前景色方法
+
+    private fun isHexColorDark(hex: Long): Boolean {
+        val red = ((hex shr 16) and 0xFF) / 255f
+        val green = ((hex shr 8) and 0xFF) / 255f
+        val blue = (hex and 0xFF) / 255f
+        val luminance = 0.299f * red + 0.587f * green + 0.114f * blue
+        return luminance < 0.5f
+    }
 } // 基类结束
 

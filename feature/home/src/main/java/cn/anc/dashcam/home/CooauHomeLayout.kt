@@ -49,6 +49,7 @@ import cn.anc.dashcam.album.AlbumPage
 import cn.anc.dashcam.core.common.AppThemeManager
 import cn.anc.dashcam.core.logging.AppLog
 import cn.anc.dashcam.core.navigation.ActivityFeatureNavigator
+import cn.anc.dashcam.core.ui.DashCamTitleBar
 import cn.anc.dashcam.device.DevicePage
 import cn.anc.dashcam.mine.MinePage
 import kotlinx.coroutines.launch
@@ -178,44 +179,34 @@ fun CooauLayoutFrame() { // 抽屉开始
         ) { //
             Column(modifier = Modifier.fillMaxSize()) { //
                 
-                // 1. 顶部动作栏 (Cooau Top Menu bar containing hamburger toggle)
-                Row( // 顶条
-                    modifier = Modifier //
-                        .fillMaxWidth() //
-                        .statusBarsPadding() // 避开电量及开孔屏
-                        .height(56.dp) //
-                        .padding(horizontal = 16.dp), //
-                    verticalAlignment = Alignment.CenterVertically // 垂直居中线平齐
-                ) { // 内容
-                    
-                    // 左上角汉堡三横线菜单 trigger (Left menu button click opens Drawer)
-                    Box( // 40dp 极宽触觉圆形点按座
-                        modifier = Modifier //
-                            .size(40.dp) //
-                            .clip(CircleShape) //
-                            .clickable { // 快速触发左滑出
-                                AppLog.i("cooau trigger menu clicked: toggle drawer", tag = "Home") //
-                                scope.launch { drawerState.open() } // 开启抽屉
-                            }, //
-                        contentAlignment = Alignment.Center //
-                    ) { // 向量
-                        Icon( // menu
-                            imageVector = Icons.Default.Menu, // 三横线 Hamburger
-                            contentDescription = "DrawerMenu", //
-                            tint = colors.selectedText, // 自动高亮马甲高亮蓝
-                            modifier = Modifier.size(24.dp) // 24dp 黄金高
-                        ) // 向量完
-                    } // 触托完
-                    
-                    Spacer(modifier = Modifier.width(16.dp)) //
-
-                    Text( // 标题“COOAU记录仪”
-                        text = "COOAU Smart Cam", //
-                        color = if (AppThemeManager.isDarkTheme(context)) Color.White else Color(0xFF1F2937), //
-                        fontSize = 18.sp, //
-                        fontWeight = FontWeight.Bold //
-                    ) // 标题完
-                } // 顶栏 Row 完
+                // 1. 顶部动作栏 (Cooau Top Menu bar containing hamburger toggle via DashCamTitleBar)
+                DashCamTitleBar(
+                    title = "COOAU Smart Cam",
+                    onBackClick = null, // 主页的返回键不要显示
+                    containerColor = Color.Transparent, // 保持透明跟随着陆背景感
+                    contentColor = if (AppThemeManager.isDarkTheme(context)) Color.White else Color(0xFF1F2937),
+                    enableStatusBarPadding = true,
+                    leftExtraContent = {
+                        // 左上角汉堡三横线菜单 trigger (Left menu button click opens Drawer)
+                        Box( // 40dp 极宽触觉圆形点按座
+                            modifier = Modifier //
+                                .size(40.dp) //
+                                .clip(CircleShape) //
+                                .clickable { // 快速触发左滑出
+                                    AppLog.i("cooau trigger menu clicked: toggle drawer", tag = "Home") //
+                                    scope.launch { drawerState.open() } // 开启抽屉
+                                }, //
+                            contentAlignment = Alignment.Center //
+                        ) { // 向量
+                            Icon( // menu
+                                imageVector = Icons.Default.Menu, // 三横线 Hamburger
+                                contentDescription = "DrawerMenu", //
+                                tint = colors.selectedText, // 自动高亮马甲高亮蓝
+                                modifier = Modifier.size(24.dp) // 24dp 黄金高
+                            ) // 向量完
+                        } // 触托完
+                    }
+                )
 
                 // 2. 首页面展示区
                 Box( //

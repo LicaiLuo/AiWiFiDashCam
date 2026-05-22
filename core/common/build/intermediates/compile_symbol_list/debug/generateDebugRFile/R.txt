@@ -1,4 +1,0 @@
-int anim slide_in_left 0x0
-int anim slide_in_right 0x0
-int anim slide_out_left 0x0
-int anim slide_out_right 0x0

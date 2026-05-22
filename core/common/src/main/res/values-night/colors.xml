@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 底部系统导航栏/手势条在夜暗黑夜下适配暗黑深色 (Dynamic navigation bar / gesture bar dark safety color) -->
+    <color name="nav_bar_bg">@color/nav_bar_bg_dark</color>
+
+    <!-- 文本前景色在黑夜下切换为高亮浅白灰色 (Settings text components override colors for nighttime readability) -->
+    <color name="settings_text_primary">@color/settings_text_primary_dark</color>
+    <color name="settings_text_secondary">@color/settings_text_secondary_dark</color>
+
+    <!-- 实时视频流占位底色自动转变为高对比度深色 (Live stream simulated gray frame transforms in darkness) -->
+    <color name="live_stream_shading">@color/live_stream_shading_full</color>
+
+    <!-- 预览与展示背景一键翻转为夜空深灰 -->
+    <color name="settings_preview_page_bg">#121212</color>
+</resources>

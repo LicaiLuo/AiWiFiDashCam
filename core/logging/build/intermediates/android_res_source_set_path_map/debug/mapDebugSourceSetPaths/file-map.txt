@@ -1,8 +1,0 @@
-cn.anc.dashcam.core.logging-pngs-0 D:\AiWorkspace\aonidashcamapp\AiWifiDashcam\core\logging\build\generated\res\pngs\debug
-cn.anc.dashcam.core.logging-updated_navigation_xml-1 D:\AiWorkspace\aonidashcamapp\AiWifiDashcam\core\logging\build\generated\updated_navigation_xml\debug
-cn.anc.dashcam.core.logging-mergeDebugResources-2 D:\AiWorkspace\aonidashcamapp\AiWifiDashcam\core\logging\build\intermediates\incremental\debug\mergeDebugResources\merged.dir
-cn.anc.dashcam.core.logging-mergeDebugResources-3 D:\AiWorkspace\aonidashcamapp\AiWifiDashcam\core\logging\build\intermediates\incremental\debug\mergeDebugResources\stripped.dir
-cn.anc.dashcam.core.logging-debug-4 D:\AiWorkspace\aonidashcamapp\AiWifiDashcam\core\logging\build\intermediates\merged_res\debug\mergeDebugResources
-cn.anc.dashcam.core.logging-debug-5 D:\AiWorkspace\aonidashcamapp\AiWifiDashcam\core\logging\build\intermediates\packaged_res\debug\packageDebugResources
-cn.anc.dashcam.core.logging-debug-6 D:\AiWorkspace\aonidashcamapp\AiWifiDashcam\core\logging\src\debug\res
-cn.anc.dashcam.core.logging-main-7 D:\AiWorkspace\aonidashcamapp\AiWifiDashcam\core\logging\src\main\res

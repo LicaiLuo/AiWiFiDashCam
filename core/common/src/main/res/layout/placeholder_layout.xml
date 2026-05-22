@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 白天模式默认布局资源分类示范 (Daytime/Default layout classification example) -->
+<merge xmlns:android="http://schemas.android.com/apk/res/android">
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/settings_pure_white" />
+</merge>

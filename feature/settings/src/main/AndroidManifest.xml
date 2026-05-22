@@ -17,6 +17,16 @@
         <activity
             android:name=".StatusBarSettingsActivity"
             android:exported="false" />
+        <activity
+            android:name=".StatusBarBgSettingsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".TitleBarBgSettingsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LiveStreamPreviewActivity"
+            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
+            android:exported="false" />
 
         <activity-alias
             android:name=".SettingsStandaloneLauncher"
